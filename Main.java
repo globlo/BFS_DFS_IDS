@@ -27,11 +27,11 @@ public class Main {
     public static void main(String[] args) {
 
         
-
         Graph.generate_adjMtx(arr);
         Graph.print(arr);
-        // File_Handler.write_to_txtFile(Graph.adjMat);
-        // BFS.search();
+        File_Handler.write_to_txtFile(Graph.adjMat);
+        BFS.search();
+        BFS.print();
 
     }
 }

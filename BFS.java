@@ -6,38 +6,32 @@ import java.util.LinkedList;
 
 public class BFS {
 
-    // public static int[][] adjMat = new int[20][20];
-    Vector<Vector<Integer>> s = new Vector<Vector<Integer>>();
+    // Vector<Vector<Integer>> s = new Vector<Vector<Integer>>();
+    static int[] dist = new int[20]; 
+    static Queue<Integer> que = new LinkedList<>();  
 
     public static void search(){    
 
-    
-        int[] dist = new int[20]; 
-        Arrays.fill(dist, -1);
-        Queue<Integer> que = new LinkedList<>();  
-   
-        dist[0] = 0;
-        que.add(0); 
+        Arrays.fill(dist, -1); // initialize every value to -1 (not visited)
+        
+        dist[0] = 0;  // mark root node 0 distance
+        que.add(0); // add root to queue before start search
 
         while (!que.isEmpty()) {
-            int vertex = que.peek(); 
-            que.remove();
 
-            for (int cu : Main.arr[vertex]) {  // iterate through the current vertecies
-                if (dist[cu] != -1) continue;  // skip if distance assigned already
+            int par_vertex = que.poll(); // take the parent node 
 
-                dist[cu] = dist[vertex] + 1;
-                que.add(cu);
+            for (int child_vertex : Main.arr[par_vertex]) {  // iterate through the all children node
+                if (dist[child_vertex] != -1) continue;  // skip if distance assigned already
+
+                dist[child_vertex] = dist[par_vertex] + 1;
+                que.add(child_vertex);
             }
         }
+    }
 
-        for (int v = 0; v < 20; ++v){
-            
-            System.out.println(v+": "+dist[v]);
-
-        } 
-
-
+    public static void print(){  
+        for (int v = 0; v < 20; v++) System.out.println(v+": "+dist[v]);
     }
     
 }

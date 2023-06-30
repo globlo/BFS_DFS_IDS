@@ -12,9 +12,9 @@ public class File_Handler {
             File file = new File("graphOutput.txt"); //Output file name where graph object will be saved
             FileWriter filewriter = new FileWriter(file);
             // PrintWriter outputFile = new PrintWriter();
-            for (int row = 0; row < graphToWrite.length; row++) {
-                for (int col = 0; col < graphToWrite.length; col++) {
-                    filewriter.write(graphToWrite[row][col] + " ");
+            for (int[] subArr : graphToWrite) {
+                for (int value : subArr) {
+                    filewriter.write(value+ " ");
                 }
                 filewriter.write("\n");
             }
