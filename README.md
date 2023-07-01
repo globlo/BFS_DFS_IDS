@@ -20,7 +20,7 @@ There's 2 traditional way been used to implement these searching algorithms: 1. 
 
 
 # User Interface
-1. Once the Program runs correctly, it shows the *Adjacency Matrices and The all location with assigned value
+1. Once the Program runs correctly, it shows the *Adjacency Matrices* and The all location with assigned value
 ![Alt text](image-4.png)
 2. The program is going to ask which Algorithm you want to use for search, the starting location, and final destination. Make sure to enter the names with all string instead of numbers
 ![Alt text](image-5.png)
@@ -28,5 +28,12 @@ There's 2 traditional way been used to implement these searching algorithms: 1. 
 ![Alt text](image-6.png)
 
 
+*Adjacency Matrices* - represent relationship of the connecting vertex
 
-*Adjacency Matrices - represent relationship of the connecting vertex
+
+# Extra Functionarity 
+
+1. This program provides an output file with the Adjacency Matrices. It's initially generates one in Main.java but you could also add one line of code "File_Handler.write_to_txtFile(Graph.adjMat);".
+
+2. If you wish to see the all visited locations with the distance from Start point, you could add line of code "Algorithms.print_distances(algo);". Note that -1 represent non visited location.
+![Alt text](image-7.png)
