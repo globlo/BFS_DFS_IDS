@@ -9,7 +9,7 @@ public class File_Handler {
     public static void write_to_txtFile(int[][] graphToWrite) {
         try{
 
-            File file = new File("graphOutput.txt"); //Output file name where graph object will be saved
+            File file = new File("adj_mat.txt"); //Output file name where graph object will be saved
             FileWriter filewriter = new FileWriter(file);
             // PrintWriter outputFile = new PrintWriter();
             for (int[] subArr : graphToWrite) {
