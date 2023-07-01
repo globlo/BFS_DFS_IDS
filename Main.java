@@ -28,9 +28,7 @@ public class Main {
         File_Handler.write_to_txtFile(Graph.adjMat);
 
         Algorithms.execute(algo,Start,Goal);
-        Algorithms.print_visited(algo);
-        Algorithms.print_path(algo);
-        // Algorithms.print_distances(algo);
+        
 
     }
 }

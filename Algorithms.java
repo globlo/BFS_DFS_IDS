@@ -3,34 +3,37 @@ import java.util.ArrayList;
 
 public abstract class Algorithms {
 
-    static int[] dist = new int[20]; 
+    static int[] dist = new int[Graph.vertices.size()]; 
     static ArrayList<Integer> visited = new ArrayList<>();
     static int[] path; 
 
-    public static void execute(String algo, String dep, String dest) {
+    static int start, goal;
 
-        int start = 0, goal = 0;
+    public static void execute(String algo, String dep, String dest) { // Bulletproofing + Execute algorithm
 
-        for(Integer key : Graph.vertices.keySet() ){
-            if( Graph.vertices.get(key).equals(dep)){   start = key;  }  // get start value 
-            if( Graph.vertices.get(key).equals(dest)){  goal = key;   }  // get goal value
+
+        if ( (start = Graph.get_key(dep)) == -1 || (goal = Graph.get_key(dest)) == -1) {  // get keys and check if entered location exist
+            System.out.println("Enter the Start or Goal location again");
+            return;
         }
-
-        System.out.println(algo+" search : ["+start+" - "+goal+"]\n");
 
         switch(algo) {
             case "BFS":
-                BFS.search(start,goal);
-                break;
+                BFS.search(start,goal); break;
             case "DFS":
-                DFS.search(start,goal);
-                break;
+                DFS.search(start,goal); break;
             case "IDS":
-                IDS.search(start, goal); 
-                break;
+                IDS.search(start, goal); break;
             default:
+                System.out.println("The Algorithm not available - OPTION:[ BFS, DFS, IDS ]");
                 return;
         }
+
+        System.out.println(algo+" search : ["+Graph.vertices.get(start)+"("+start + ")"+" - "+Graph.vertices.get(goal)+"("+goal + ")"+"]\n");
+
+        print_visited(algo);
+        print_path(algo);
+        // print_distances(algo);
     }
 
     public static void travel_back(int cur){ 
@@ -55,7 +58,8 @@ public abstract class Algorithms {
 
     public static void print_distances(String st){  
         System.out.println(st + " - The distance from start (-1 represent not visited)");
-        for (int v = 0; v < 20; v++) System.out.println(Graph.vertices.get(v)+"("+v+"): "+dist[v]);
+        for (int i = 0; i < Graph.vertices.size(); i++) 
+            System.out.println(Graph.vertices.get(i)+"("+i+"): "+dist[i]);
         System.out.println('\n');
     }
 

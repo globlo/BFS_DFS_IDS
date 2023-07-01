@@ -78,4 +78,14 @@ public class Graph {  // this class contain Original graph info, adjMat generato
         System.out.println("\n\n");
 
     }
+
+    public static Integer get_key(String value){
+
+        for(Integer key : Graph.vertices.keySet()) {
+            if( Graph.vertices.get(key).equals(value)) {  
+                return key;
+            }  
+        }
+        return -1;
+    }
 }

@@ -29,7 +29,7 @@ public class IDS extends Algorithms{
             int par_vertex = stack.pop(); // take the parent node 
             visited.add(par_vertex);
 
-            if ( par_vertex == goal){ // target found, travel back
+            if ( par_vertex == goal){ // target found, get the path
                 
                 Algorithms.travel_back(par_vertex);        
                 return true;
