@@ -1,6 +1,4 @@
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 public class Graph {  // this class contain Original graph info, adjMat generator, and print methods
