@@ -7,16 +7,18 @@ public abstract class Algorithms {
     static ArrayList<Integer> visited = new ArrayList<>();
     static int[] path; 
 
-    public static void execute(String st, String dep, String dest) {
+    public static void execute(String algo, String dep, String dest) {
 
         int start = 0, goal = 0;
 
-        for(int key : Graph.vertices.keySet() ){
-            if( Graph.vertices.get(key) == dep){   start = key;  }  // get start value 
-            if( Graph.vertices.get(key) == dest){  goal = key;   }  // get goal value
+        for(Integer key : Graph.vertices.keySet() ){
+            if( Graph.vertices.get(key).equals(dep)){   start = key;  }  // get start value 
+            if( Graph.vertices.get(key).equals(dest)){  goal = key;   }  // get goal value
         }
 
-        switch(st) {
+        System.out.println(algo+" search : ["+start+" - "+goal+"]\n");
+
+        switch(algo) {
             case "BFS":
                 BFS.search(start,goal);
                 break;

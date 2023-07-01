@@ -67,13 +67,15 @@ public class Graph {  // this class contain Original graph info, adjMat generato
     }
 
     public static void print_adjMtx(){
-        for (int[] subMat : adjMat) { // print out the adjacency matrix  
+        System.out.println("\n\nAdjacency Matrices: ");
+        for (int[] subMat : adjMat) { // print out the Adjacency matrix  
             for (int val :  subMat){
                   
-                System.out.print(val);               
+                System.out.print(val+ " ");               
             }    
             System.out.println(" ");
         }
+        System.out.println("\n\n");
 
     }
 }
