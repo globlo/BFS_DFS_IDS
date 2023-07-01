@@ -9,14 +9,15 @@ public class IDS extends Algorithms{
 
     public static void search(int start, int goal){    
 
-        int max_depth = 1;
+        int max_depth = 0;
         
-        while (!IDS_search(start,goal, max_depth)) {
-            max_depth++;
+        while (visited.size() < Graph.vertices.size()) {  // run by every level till max depth, stop when all nodes visited
+    
+           if (IDS_search(start,goal, max_depth++)) return; 
         }
     }
 
-    public static boolean IDS_search(int start, int goal, int max_depth){    
+    public static boolean IDS_search(int start, int goal, int max_depth){    // return T if found target
 
         Arrays.fill(dist, -1); // initialize every value to -1 (not visited)
         
@@ -28,7 +29,7 @@ public class IDS extends Algorithms{
             int par_vertex = stack.pop(); // take the parent node 
             visited.add(par_vertex);
 
-            if ( par_vertex == goal){ // travel back
+            if ( par_vertex == goal){ // target found, travel back
                 
                 Algorithms.travel_back(par_vertex);        
                 return true;
