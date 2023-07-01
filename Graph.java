@@ -88,4 +88,15 @@ public class Graph {  // this class contain Original graph info, adjMat generato
         }
         return -1;
     }
+    public static void print_vertices(){
+
+        System.out.println("The all locations and assigned value: ");
+
+        for(Integer key : Graph.vertices.keySet()) {
+            System.out.print(Graph.vertices.get(key)+"("+key+")");
+            if (key < Graph.vertices.size() - 1)  System.out.print(", ");
+        }
+        System.out.println("\n");
+        
+    }
 }

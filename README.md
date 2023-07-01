@@ -1,5 +1,3 @@
-# BFS_DFS_IDS
-
 
 # Project Description
 This program allows you to try 3 Searching Algorithms
@@ -11,7 +9,7 @@ This program allows you to try 3 Searching Algorithms
 There's 2 traditional way been used to implement these searching algorithms: 1. Recussive function 2. While Loop and this program is impremented by While loop. The reason I used 2nd method is that for the easiness of mangaging the code and implementation. 
 
 
-# How to Install and Run the Project
+# How to Compile and Run the Project
 
 1. Download the project in your local environment
 2. In Terminal, go to the directory where your cource code is located
@@ -19,3 +17,16 @@ There's 2 traditional way been used to implement these searching algorithms: 1. 
 4. Run the main file by command "java Main"
 
 ![Alt text](image.png)
+
+
+# User Interface
+1. Once the Program runs correctly, it shows the *Adjacency Matrices and The all location with assigned value
+![Alt text](image-4.png)
+2. The program is going to ask which Algorithm you want to use for search, the starting location, and final destination. Make sure to enter the names with all string instead of numbers
+![Alt text](image-5.png)
+3. After you hit Enter key, it'll show you the all visited locations and the shortest path that it finds based on the search algorithms you have chosen
+![Alt text](image-6.png)
+
+
+
+*Adjacency Matrices - represent relationship of the connecting vertex
