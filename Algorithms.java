@@ -36,7 +36,7 @@ public abstract class Algorithms {
         // print_distances(algo);
     }
 
-    public static void travel_back(int cur){ 
+    public static void travel_back(int cur){  // this method allows to find path
         
         int dist_p= dist[cur];  // the distance of parent(cu) node
 
