@@ -29,6 +29,8 @@ public class IDS extends Algorithms{
         
         while (!stack.isEmpty() ) {
 
+            if (dist[stack.peek()] > max_depth) return false; // if cu node is over the maxdepth, return
+
             int par_vertex = stack.pop(); // take the parent node 
             visited.add(par_vertex);
 
@@ -37,8 +39,6 @@ public class IDS extends Algorithms{
                 Algorithms.travel_back(par_vertex);     
                 return true;
             }
-
-            if (dist[par_vertex] > max_depth) return false; // if cu node reaches the max depth ignore it
                 
             for (int child_vertex : Graph.neighbors[par_vertex]) {  // iterate through the all children node
                 if (dist[child_vertex] != -1) continue;  // ignore it if distance assigned already(visited)
