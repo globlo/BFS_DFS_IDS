@@ -35,7 +35,8 @@ public class IDS extends Algorithms{
                 return true;
             }
 
-            if (dist[par_vertex] >= max_depth) continue; // if cu node reaches the max depth ignore it
+            if (dist[par_vertex] == max_depth) continue; // if cu node reaches the max depth ignore it
+            else if (dist[par_vertex] > max_depth) return true; // if cu node reaches over the maxdepth, terminate program
                 
             for (int child_vertex : Graph.neighbors[par_vertex]) {  // iterate through the all children node
                 if (dist[child_vertex] != -1) continue;  // ignore it if distance assigned already(visited)
